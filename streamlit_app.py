@@ -1,5 +1,7 @@
 import streamlit as st
 
+import streamlit as st
+
 # 1. Configuración de la página
 st.set_page_config(
     page_title="Four Essences",
@@ -7,62 +9,46 @@ st.set_page_config(
     layout="wide"
 )
 
-# 2. ENCABEZADO 
-st.markdown("""
-    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="logo.png" 
-        style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
-    </div>
-    """, unsafe_allow_html=True)
-
-# 3. Estética: Fuentes Elegantes, Fondo Beige y Texto Blanco en Sidebar
+# 2. Estética: Limpieza profunda y Estilo Elegante
 st.markdown("""
     <style>
-
-/* 1. ELIMINAR EL BOTÓN DE LA FLECHA (keyboard_double_arrow) */
-    /* Intentamos por varias rutas para asegurar que desaparezca */
-    button[kind="headerNoPadding"], 
-    [data-testid="stSidebarCollapseButton"],
-    .st-emotion-cache-6q9sum, 
-    .st-action-button {
+    /* --- ELIMINAR TEXTO 'keyboard_double_arrow' Y HEADER --- */
+    header, [data-testid="stHeader"], .st-emotion-cache-6q9sum, .st-action-button {
+        visibility: hidden;
+        height: 0% !important;
         display: none !important;
     }
-    /* 1. FUENTE GLOBAL (Excluimos los iconos de Streamlit) */
-    html, body, [class*="css"], .stMarkdown, p, span:not(.material-icons) {
+    
+    /* Bloqueo específico para que no aparezca el texto del icono */
+    button span {
+        display: none !important;
+    }
+
+    /* --- FONDO Y FUENTES --- */
+    .stApp {
+        background-color: #F5F5DC; /* Beige Claro */
+    }
+    
+    html, body, [class*="css"], .stMarkdown, p, span {
         font-family: 'Georgia', serif !important;
         color: #2D4739; 
     }
 
-    /* 2. REGLA MAESTRA PARA ARREGLAR LAS FLECHAS/ICONOS */
-    [data-testid="stIcon"], .material-icons, [class^="StyledIcon"] {
-        font-family: 'Material Icons' !important;
-        font-style: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-    }
-    
-    /* FONDO DE LA PÁGINA: Beige Claro */
-    .stApp {
-        background-color: #F5F5DC; 
-    }
-
-    /* ESTILO DEL SIDEBAR */
+    /* --- SIDEBAR --- */
     [data-testid="stSidebar"] {
-        background-color: #588157 !important; 
+        background-color: #588157 !important; /* Verde Musgo solicitado */
     }
 
-    /* TÍTULOS ELEGANTES */
+    /* Títulos */
     h1, h2, h3, .stTitle {
         font-family: 'Georgia', serif !important;
         color: #1B3022 !important;
         font-weight: 700;
     }
 
-    /* BARRAS DE NAVEGACIÓN (Botones del Sidebar) */
+    /* --- BARRAS DE NAVEGACIÓN --- */
     div[role="radiogroup"] > label {
-        background-color: #2D4739 !important; 
+        background-color: #2D4739 !important; /* Verde Follaje */
         border: 1px solid #4B5D43 !important;
         padding: 12px 20px !important;
         border-radius: 8px !important;
@@ -70,23 +56,23 @@ st.markdown("""
         width: 100% !important;
     }
 
-    /* TEXTO DE LAS BARRAS: Blanco */
+    /* Texto blanco en las barras */
     div[role="radiogroup"] > label div[data-testid="stMarkdownContainer"] p {
         color: white !important;
         font-size: 1.1rem !important;
     }
 
-    /* OCULTAR EL CÍRCULO DEL RADIO */
+    /* Ocultar círculo de selección */
     div[role="radiogroup"] > label > div:first-child {
         display: none !important;
     }
     
-    /* EFECTO HOVER */
+    /* Efecto al pasar el mouse */
     div[role="radiogroup"] > label:hover {
-        background-color: #588157 !important;
+        background-color: #4B5D43 !important;
     }
 
-    /* Ajuste para el texto pequeño de abajo */
+    /* Texto pequeño inferior */
     .footer-text {
         color: #D4D4AC !important;
         font-size: 0.85rem !important;
@@ -97,25 +83,30 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+# 3. ENCABEZADO (LOGO)
+st.markdown("""
+    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <img src="logo.png" 
+        style="width:100%; height:150px; object-fit: cover; border-radius: 10px;"
+        onerror="this.style.display='none'">
+    </div>
+    """, unsafe_allow_html=True)
+
 # --- SIDEBAR ---
 with st.sidebar:
-    # Título superior del menú
-    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menu </h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menú</h2>", unsafe_allow_html=True)
     st.write("") 
     
-    # Navegación por barras
     pagina = st.radio(
-        label="", 
+        label="nav", 
         options=["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"],
         label_visibility="collapsed" 
     )
     
     st.markdown("---")
-    
-    # Detalle inferior: #four essences en pequeño
     st.markdown('<p class="footer-text">FOUR ESSENCES</p>', unsafe_allow_html=True)
 
-# --- CONTENIDO DINÁMICO ---
+# --- CONTENIDO ---
 if pagina == "Sobre nosotros":
     st.title("Sobre Nosotros")
     st.subheader("Ciencia y Naturaleza en Armonía")
