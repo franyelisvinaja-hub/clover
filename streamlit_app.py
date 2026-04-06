@@ -28,7 +28,7 @@ st.markdown("""
         font-family: 'Georgia', sans-serif;
     }
     [data-testid="stSidebar"] {
-        background-color: #91A085; 
+        background-color: #1B3022; 
         color: white;
      } 
     /* Color de fondo de la aplicación (usando un verde muy claro/crema) */
@@ -41,15 +41,13 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- SIDEBAR NAV ---
-st.sidebar.title("🌿 Four Essences")
-st.sidebar.markdown("---")
+# SIDEBAR
 pagina = st.sidebar.radio(
-    "Navegación",
-    ["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"]
-)
-
-st.sidebar.info("Innovación química y natural desde Venezuela.")
+with st.sidebar:
+    st.header("🌱 Sobre nosotros")
+    st.header("🪴 Productos CLOVER")
+    st.header("🍃 Aceites esenciales")
+    
 
 # --- SECCIÓN: SOBRE NOSOTROS ---
 if pagina == "Sobre nosotros":
