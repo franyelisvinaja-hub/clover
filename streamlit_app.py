@@ -1,5 +1,25 @@
 import streamlit as st
 
+# --- FUNCIÓN PARA CARGAR IMAGEN LOCAL ---
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def img_to_html(img_path):
+    img_format = img_path.split(".")[-1]
+    bin_str = get_base64_of_bin_file(img_path)
+    html_code = f'<img src="data:image/{img_format};base64,{bin_str}" style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">'
+    return html_code
+
+logo_filename = "logo.png" 
+
+if os.path.exists(logo_filename):
+    logo_html = img_to_html(logo_filename)
+    st.markdown(f'<div style="display: flex; justify-content: center; margin-bottom: 20px;">{logo_html}</div>', unsafe_allow_html=True)
+else:
+    st.error(f"⚠️ No se encontró el archivo '{logo_filename}'. Asegúrate de que esté en la misma carpeta que este script.")
+
 # 1. Configuración de la página
 st.set_page_config(
     page_title="Four Essences",
