@@ -104,4 +104,8 @@ if pagina == "Sobre nosotros":
 
 elif pagina == "Línea cosmética 'CLOVER'":
     st.title("🍀 Línea Cosmética CLOVER")
-    st.write("Explora nuestra gama
+    st.write("Explora nuestra gama de productos con aceites esenciales de orégano y clavo...")
+
+elif pagina == "Aceites esenciales":
+    st.title("💧 Aceites Esenciales")
+    st.write("Calidad premium obtenida mediante procesos optimizados de destilación...")
