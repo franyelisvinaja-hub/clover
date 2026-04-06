@@ -18,19 +18,27 @@ st.markdown("""
 # 3. Estética: Fuentes Elegantes, Fondo Beige y Texto Blanco en Sidebar
 st.markdown("""
     <style>
+
+
+    /* 1. FUENTE GLOBAL (Excluimos los iconos de Streamlit) */
+    html, body, [class*="css"], .stMarkdown, p, span:not(.material-icons) {
+        font-family: 'Georgia', serif !important;
+        color: #2D4739; 
+    }
+
+    /* 2. REGLA MAESTRA PARA ARREGLAR LAS FLECHAS/ICONOS */
+    [data-testid="stIcon"], .material-icons, [class^="StyledIcon"] {
+        font-family: 'Material Icons' !important;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+    
     /* FONDO DE LA PÁGINA: Beige Claro */
     .stApp {
         background-color: #F5F5DC; 
-    }
-    
-    /* Aplicamos la fuente a casi todo, pero EXCLUIMOS los elementos que usan iconos */
-    html, body, .stMarkdown, p, span, label {
-    font-family: 'Georgia', serif !important;
-    }
-
-    /* Forzamos a que los iconos sigan siendo iconos y no se conviertan en Georgia */
-    .material-icons, .e17vll9u0, [data-testid="stIcon"] {
-    font-family: 'Material Icons' !important;
     }
 
     /* ESTILO DEL SIDEBAR */
