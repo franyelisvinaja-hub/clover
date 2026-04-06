@@ -47,6 +47,7 @@ with st.sidebar:
     st.header("🌱 Sobre nosotros")
     st.header("🪴 Productos CLOVER")
     st.header("🍃 Aceites esenciales")
+    )
     
 
 # --- SECCIÓN: SOBRE NOSOTROS ---
