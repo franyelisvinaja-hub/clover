@@ -31,7 +31,7 @@ st.markdown("""
 
     /* ESTILO DEL SIDEBAR */
     [data-testid="stSidebar"] {
-        background-color: #82937E !important; 
+        background-color: #588157 !important; 
     }
 
     /* TÍTULOS ELEGANTES */
