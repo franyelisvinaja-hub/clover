@@ -81,7 +81,7 @@ st.markdown("""
 # --- SIDEBAR ---
 with st.sidebar:
     # Título superior del menú
-    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menu /h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menu </h2>", unsafe_allow_html=True)
     st.write("") 
     
     # Navegación por barras
