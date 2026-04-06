@@ -77,15 +77,17 @@ with st.sidebar:
     st.markdown("<h2 style='color: white; text-align: center;'>🌿 Menú</h2>", unsafe_allow_html=True)
     st.write("") # Espacio
     
-    # El radio button ahora se comportará como barras gracias al CSS de arriba
+    # CORRECCIÓN: Agregamos una cadena vacía "" como label antes de la lista
     pagina = st.radio(
-        ["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"],
-        label_visibility="collapsed" # Ocultamos el título del radio para que se vea más limpio
+        label="", 
+        options=["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"],
+        label_visibility="collapsed" 
     )
     
     st.markdown("---")
-    st.markdown("<p style='color: #A3B18A; font-size: 0.8rem; text-align: center;'>Four Essences - Innovación Química</p>", unsafe_allow_html=True)
-
+    st.markdown("<p style='color: #A3B18A; font-size: 0.8rem; text-align: center;'>Four Essences</p>", 
+                unsafe_allow_html=True)
+    
 # --- LÓGICA DE PÁGINAS ---
 if pagina == "Sobre nosotros":
     st.title("Sobre Nosotros")
