@@ -25,7 +25,7 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
     
     html, body, [class*="css"] {
-        font-family: 'Georgia', serif;
+        font-family: 'Georgia', sans-serif;
     }
     [data-testid="stSidebar"] {
         background-color: #91A085; 
