@@ -14,7 +14,7 @@ st.set_page_config(
 # 2. ENCABEZADO 
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="imagenes clover/logo 4 essences.png" 
+        <img src="imagenes_clover/logo_4_essences.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
     """, unsafe_allow_html=True)
