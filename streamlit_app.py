@@ -19,7 +19,14 @@ st.markdown("""
 st.markdown("""
     <style>
 
-
+/* 1. ELIMINAR EL BOTÓN DE LA FLECHA (keyboard_double_arrow) */
+    /* Intentamos por varias rutas para asegurar que desaparezca */
+    button[kind="headerNoPadding"], 
+    [data-testid="stSidebarCollapseButton"],
+    .st-emotion-cache-6q9sum, 
+    .st-action-button {
+        display: none !important;
+    }
     /* 1. FUENTE GLOBAL (Excluimos los iconos de Streamlit) */
     html, body, [class*="css"], .stMarkdown, p, span:not(.material-icons) {
         font-family: 'Georgia', serif !important;
