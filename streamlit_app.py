@@ -14,7 +14,7 @@ st.set_page_config(
 # 2. ENCABEZADO 
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="imagenes_clover/logo_4_essences.png" 
+        <img src="logo.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
     """, unsafe_allow_html=True)
@@ -22,13 +22,22 @@ st.markdown("""
 # 3. Estética 
 st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Georgia', serif;
+    }
+    [data-testid="stSidebar"] {
+        background-color: #91A085; 
+        color: white;
+     } 
+    /* Color de fondo de la aplicación (usando un verde muy claro/crema) */
     .main {
-        background-color: #DAD7CD;
+        background-color: #F0F2EB;
     }
-    .stTitle {
+    /* Color de los títulos (un verde oscuro profundo) */
+    .stTitle, h1, h2, h3 {
         color: #1B3022;
-        font-family: 'georgia';
-    }
     </style>
     """, unsafe_allow_html=True)
 
