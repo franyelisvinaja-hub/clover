@@ -24,7 +24,7 @@ st.markdown("""
 
     /* --- FONDO Y FUENTES --- */
     .stApp {
-        background-color: #F5F5DC; /* Beige Claro */
+        background-color: #E9E0A2; /* Beige Claro */
     }
     
     html, body, [class*="css"], .stMarkdown, p, span {
