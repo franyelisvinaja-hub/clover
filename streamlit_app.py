@@ -14,7 +14,7 @@ st.set_page_config(
 # 2. ENCABEZADO (Corregido: faltaba cerrar el bloque st.markdown con """)
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="logo 4 essences.png" 
+        <img src="assets/logo 4 essences.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
     """, unsafe_allow_html=True)
@@ -27,7 +27,7 @@ st.markdown("""
     }
     .stTitle {
         color: #2e4a31;
-        font-family: 'Helvetica', sans-serif;
+        font-family: 'montserrat';
     }
     </style>
     """, unsafe_allow_html=True)
