@@ -11,7 +11,7 @@ st.set_page_config(  page_title="Four Essences",   page_icon="🌿",   layout="w
 # ENCABEZADO
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="C:\Users\milei\Downloads\Diseño sin título.png" 
+        <img src="logo 4 essences.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
 
@@ -78,14 +78,6 @@ elif pagina == "Aceites esenciales":
         Nuestros aceites y hidrolatos son obtenidos mediante procesos de **destilación por arrastre de vapor**, 
         asegurando la máxima pureza y preservación de compuestos químicos clave.
     """)
-    
-    # Expander para detalles técnicos
-    with st.expander("Ver métodos de extracción"):
-        st.write("""
-            - **Destilación:** Control riguroso de temperatura y tiempo.
-            - **Pureza:** Sin fragancias sintéticas añadidas.
-            - **Origen:** Botánicos seleccionados localmente.
-        """)
     
     # Ejemplo de lista de aceites
     aceites = ["Orégano", "Clavo de olor", "Eucalipto"]
