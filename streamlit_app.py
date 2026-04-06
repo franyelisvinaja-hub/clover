@@ -74,10 +74,8 @@ elif pagina == "Línea cosmética 'CLOVER'":
 # --- SECCIÓN: ACEITES ESENCIALES ---
 elif pagina == "Aceites esenciales":
     st.title("💧 Aceites Esenciales")
-    st.write("""
-        Nuestros aceites y hidrolatos son obtenidos mediante procesos de **destilación por arrastre de vapor**, 
-        asegurando la máxima pureza y preservación de compuestos químicos clave.
-    """)
+    st.write("Nuestros aceites y hidrolatos son obtenidos mediante procesos de **destilación por arrastre de vapor**, 
+        asegurando la máxima pureza y preservación de compuestos químicos clave.")
     
     # Ejemplo de lista de aceites
     aceites = ["Orégano", "Clavo de olor", "Eucalipto"]
