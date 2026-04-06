@@ -1,7 +1,6 @@
 import streamlit as st
 
-import streamlit as st
-
+logo_url = "https://raw.githubusercontent.com/mileidy1211/clover/main/logo.png"
 # 1. Configuración de la página
 st.set_page_config(
     page_title="Four Essences",
@@ -86,7 +85,7 @@ st.markdown("""
 # 3. ENCABEZADO (LOGO)
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="logo.png" 
+        <img src="{logo_url}" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;"
         onerror="this.style.display='none'">
     </div>
