@@ -15,26 +15,23 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-# 3. Estética: Fuentes Elegantes, Fondo Beige y Texto Blanco
+# 3. Estética: Fuentes Elegantes, Fondo Beige y Texto Blanco en Sidebar
 st.markdown("""
     <style>
-    /* IMPORTAR FUENTE ELEGANTE (Opcional, pero Georgia ya viene en el sistema) */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
     /* FONDO DE LA PÁGINA: Beige Claro */
     .stApp {
         background-color: #F5F5DC; 
     }
     
-    /* FUENTE GLOBAL: Forzamos Georgia o Times New Roman */
+    /* FUENTE GLOBAL: Forzamos Georgia */
     html, body, [class*="css"], .stMarkdown, p, span {
-        font-family: 'Georgia', 'Times New Roman', serif !important;
-        color: #2D4739; /* Un verde muy oscuro para el texto, casi negro */
+        font-family: 'Georgia', serif !important;
+        color: #2D4739; 
     }
 
     /* ESTILO DEL SIDEBAR */
     [data-testid="stSidebar"] {
-        background-color: #1B3022 !important; /* Verde Bosque */
+        background-color: #1B3022 !important; 
     }
 
     /* TÍTULOS ELEGANTES */
@@ -44,9 +41,9 @@ st.markdown("""
         font-weight: 700;
     }
 
-    /* BARRAS DE NAVEGACIÓN (Radio Buttons como botones) */
+    /* BARRAS DE NAVEGACIÓN (Botones del Sidebar) */
     div[role="radiogroup"] > label {
-        background-color: #2D4739 !important; /* Verde intermedio */
+        background-color: #2D4739 !important; 
         border: 1px solid #4B5D43 !important;
         padding: 12px 20px !important;
         border-radius: 8px !important;
@@ -54,17 +51,10 @@ st.markdown("""
         width: 100% !important;
     }
 
-    /* TEXTO DE LAS BARRAS: Blanco Total */
+    /* TEXTO DE LAS BARRAS: Blanco */
     div[role="radiogroup"] > label div[data-testid="stMarkdownContainer"] p {
         color: white !important;
         font-size: 1.1rem !important;
-        font-weight: 400 !important;
-    }
-
-    /* EFECTO HOVER (Pasar el mouse) */
-    div[role="radiogroup"] > label:hover {
-        background-color: #588157 !important;
-        cursor: pointer;
     }
 
     /* OCULTAR EL CÍRCULO DEL RADIO */
@@ -72,18 +62,29 @@ st.markdown("""
         display: none !important;
     }
     
-    /* LÍNEA DIVISORA */
-    hr {
-        border-top: 1px solid #D4D4AC !important;
+    /* EFECTO HOVER */
+    div[role="radiogroup"] > label:hover {
+        background-color: #588157 !important;
+    }
+
+    /* Ajuste para el texto pequeño de abajo */
+    .footer-text {
+        color: #D4D4AC !important;
+        font-size: 0.85rem !important;
+        text-align: center;
+        font-style: italic;
+        margin-top: 20px;
     }
     </style>
     """, unsafe_allow_html=True)
 
 # --- SIDEBAR ---
 with st.sidebar:
-    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>Four Essences</h2>", unsafe_allow_html=True)
+    # Título superior del menú
+    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menú</h2>", unsafe_allow_html=True)
     st.write("") 
     
+    # Navegación por barras
     pagina = st.radio(
         label="", 
         options=["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"],
@@ -91,17 +92,16 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("<p style='color: #F5F5DC; text-align: center; font-style: italic;'>Innovación desde el laboratorio</p>", unsafe_allow_html=True)
+    
+    # Detalle inferior: #four essences en pequeño
+    st.markdown('<p class="footer-text">#four essences</p>', unsafe_allow_html=True)
 
-# --- CONTENIDO ---
+# --- CONTENIDO DINÁMICO ---
 if pagina == "Sobre nosotros":
-    st.title("Nuestra Historia")
-    st.write("En **Four Essences**, creemos en la ciencia aplicada a la naturaleza...")
+    st.title("Sobre Nosotros")
+    st.subheader("Ciencia y Naturaleza en Armonía")
+    st.write("En **Four Essences**, desarrollamos soluciones cosméticas basadas en la investigación química...")
 
 elif pagina == "Línea cosmética 'CLOVER'":
-    st.title("Línea CLOVER")
-    st.write("Productos diseñados con extractos de orégano y clavo...")
-
-elif pagina == "Aceites esenciales":
-    st.title("Extractos Puros")
-    st.write("Destilación por arrastre de vapor de alta pureza...")
+    st.title("🍀 Línea Cosmética CLOVER")
+    st.write("Explora nuestra gama
