@@ -85,7 +85,7 @@ st.markdown("""
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
         <img src="https://github.com/franyelisvinaja-hub/clover/blob/main/logo.png?raw=true" 
-        style="width:100%; height:150px; object-fit: cover; border-radius: 10px;"
+        style="width:100%; height:300px; object-fit: cover; border-radius: 10px;"
         onerror="this.style.display='none'">
     </div>
     """, unsafe_allow_html=True)
