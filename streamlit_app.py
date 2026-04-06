@@ -11,23 +11,23 @@ st.set_page_config(
     layout="wide"
 )
 
-# 2. ENCABEZADO (Corregido: faltaba cerrar el bloque st.markdown con """)
+# 2. ENCABEZADO 
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="assets/logo 4 essences.png" 
+        <img src="imagenes clover/logo 4 essences.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
     """, unsafe_allow_html=True)
 
-# 3. Estética (Corregido: Alineación de las comillas triples)
+# 3. Estética 
 st.markdown("""
     <style>
     .main {
-        background-color: #f5f7f1;
+        background-color: #DAD7CD;
     }
     .stTitle {
-        color: #2e4a31;
-        font-family: 'montserrat';
+        color: #1B3022;
+        font-family: 'georgia';
     }
     </style>
     """, unsafe_allow_html=True)
