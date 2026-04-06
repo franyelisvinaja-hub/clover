@@ -1,25 +1,5 @@
 import streamlit as st
 
-# --- FUNCIÓN PARA CARGAR IMAGEN LOCAL ---
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-def img_to_html(img_path):
-    img_format = img_path.split(".")[-1]
-    bin_str = get_base64_of_bin_file(img_path)
-    html_code = f'<img src="data:image/{img_format};base64,{bin_str}" style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">'
-    return html_code
-
-logo_filename = "logo.png" 
-
-if os.path.exists(logo_filename):
-    logo_html = img_to_html(logo_filename)
-    st.markdown(f'<div style="display: flex; justify-content: center; margin-bottom: 20px;">{logo_html}</div>', unsafe_allow_html=True)
-else:
-    st.error(f"⚠️ No se encontró el archivo '{logo_filename}'. Asegúrate de que esté en la misma carpeta que este script.")
-
 # 1. Configuración de la página
 st.set_page_config(
     page_title="Four Essences",
@@ -101,7 +81,7 @@ st.markdown("""
 # --- SIDEBAR ---
 with st.sidebar:
     # Título superior del menú
-    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menú</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>🌿 Menu /h2>", unsafe_allow_html=True)
     st.write("") 
     
     # Navegación por barras
@@ -114,7 +94,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Detalle inferior: #four essences en pequeño
-    st.markdown('<p class="footer-text">#four essences</p>', unsafe_allow_html=True)
+    st.markdown('<p class="footer-text">FOUR ESSENCES</p>', unsafe_allow_html=True)
 
 # --- CONTENIDO DINÁMICO ---
 if pagina == "Sobre nosotros":
