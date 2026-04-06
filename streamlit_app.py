@@ -23,10 +23,14 @@ st.markdown("""
         background-color: #F5F5DC; 
     }
     
-    /* FUENTE GLOBAL: Forzamos Georgia */
-    html, body, [class*="css"], .stMarkdown, p, span {
-        font-family: 'Georgia', serif !important;
-        color: #2D4739; 
+    /* Aplicamos la fuente a casi todo, pero EXCLUIMOS los elementos que usan iconos */
+    html, body, .stMarkdown, p, span, label {
+    font-family: 'Georgia', serif !important;
+    }
+
+    /* Forzamos a que los iconos sigan siendo iconos y no se conviertan en Georgia */
+    .material-icons, .e17vll9u0, [data-testid="stIcon"] {
+    font-family: 'Material Icons' !important;
     }
 
     /* ESTILO DEL SIDEBAR */
