@@ -15,69 +15,75 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-# 3. Estética: Hack para convertir Radio Buttons en Barras/Botones
+# 3. Estética: Fuentes Elegantes, Fondo Beige y Texto Blanco
 st.markdown("""
     <style>
-    /* Fondo general */
-    .main {
-        background-color: #F0F2EB;
+    /* IMPORTAR FUENTE ELEGANTE (Opcional, pero Georgia ya viene en el sistema) */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* FONDO DE LA PÁGINA: Beige Claro */
+    .stApp {
+        background-color: #F5F5DC; 
     }
     
-    /* Estilo del Sidebar */
+    /* FUENTE GLOBAL: Forzamos Georgia o Times New Roman */
+    html, body, [class*="css"], .stMarkdown, p, span {
+        font-family: 'Georgia', 'Times New Roman', serif !important;
+        color: #2D4739; /* Un verde muy oscuro para el texto, casi negro */
+    }
+
+    /* ESTILO DEL SIDEBAR */
     [data-testid="stSidebar"] {
-        background-color: #1B3022;
+        background-color: #1B3022 !important; /* Verde Bosque */
     }
 
-    /* ESTILO DE BARRAS PARA EL MENÚ */
-    /* Ocultamos el círculo original */
-    div[data-testid="stMarkdownContainer"] p {
-        font-weight: 600;
+    /* TÍTULOS ELEGANTES */
+    h1, h2, h3, .stTitle {
+        font-family: 'Georgia', serif !important;
+        color: #1B3022 !important;
+        font-weight: 700;
     }
-    
-    /* Convertir cada opción en una barra */
+
+    /* BARRAS DE NAVEGACIÓN (Radio Buttons como botones) */
     div[role="radiogroup"] > label {
-        background-color: #2D4739; /* Verde un poco más claro que el fondo */
-        color: white !important;
-        padding: 15px 20px;
-        border-radius: 5px;
-        border: 1px solid #4B5D43;
-        margin-bottom: 10px;
-        width: 100%;
-        transition: all 0.3s ease;
+        background-color: #2D4739 !important; /* Verde intermedio */
+        border: 1px solid #4B5D43 !important;
+        padding: 12px 20px !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
+        width: 100% !important;
     }
 
-    /* Efecto cuando pasas el mouse (Hover) */
+    /* TEXTO DE LAS BARRAS: Blanco Total */
+    div[role="radiogroup"] > label div[data-testid="stMarkdownContainer"] p {
+        color: white !important;
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+    }
+
+    /* EFECTO HOVER (Pasar el mouse) */
     div[role="radiogroup"] > label:hover {
-        background-color: #588157;
-        border-color: #A3B18A;
+        background-color: #588157 !important;
         cursor: pointer;
     }
 
-    /* Estilo cuando la opción está seleccionada */
-    div[role="radiogroup"] [data-checked="true"] > div {
-        background-color: #588157 !important;
-        font-weight: bold;
-    }
-
-    /* Esconder el círculo pequeño de radio button */
+    /* OCULTAR EL CÍRCULO DEL RADIO */
     div[role="radiogroup"] > label > div:first-child {
-        display: none;
+        display: none !important;
     }
-
-    /* Títulos de la página principal */
-    .stTitle, h1, h2, h3 {
-        color: #1B3022;
-        font-family: 'Georgia', serif;
+    
+    /* LÍNEA DIVISORA */
+    hr {
+        border-top: 1px solid #D4D4AC !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
 # --- SIDEBAR ---
 with st.sidebar:
-    st.markdown("<h2 style='color: white; text-align: center;'>🌿 Menú</h2>", unsafe_allow_html=True)
-    st.write("") # Espacio
+    st.markdown("<h2 style='color: white; text-align: center; font-family: Georgia;'>Four Essences</h2>", unsafe_allow_html=True)
+    st.write("") 
     
-    # CORRECCIÓN: Agregamos una cadena vacía "" como label antes de la lista
     pagina = st.radio(
         label="", 
         options=["Sobre nosotros", "Línea cosmética 'CLOVER'", "Aceites esenciales"],
@@ -85,19 +91,17 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("<p style='color: #A3B18A; font-size: 0.8rem; text-align: center;'>Four Essences</p>", 
-                unsafe_allow_html=True)
-    
-# --- LÓGICA DE PÁGINAS ---
+    st.markdown("<p style='color: #F5F5DC; text-align: center; font-style: italic;'>Innovación desde el laboratorio</p>", unsafe_allow_html=True)
+
+# --- CONTENIDO ---
 if pagina == "Sobre nosotros":
-    st.title("Sobre Nosotros")
-    st.subheader("Nuestra Esencia")
-    st.write("En **Four Essences**, fusionamos el rigor de la ingeniería química con la pureza de la naturaleza...")
+    st.title("Nuestra Historia")
+    st.write("En **Four Essences**, creemos en la ciencia aplicada a la naturaleza...")
 
 elif pagina == "Línea cosmética 'CLOVER'":
-    st.title("🍀 Línea Cosmética CLOVER")
-    st.write("Contenido de la línea Clover...")
+    st.title("Línea CLOVER")
+    st.write("Productos diseñados con extractos de orégano y clavo...")
 
 elif pagina == "Aceites esenciales":
-    st.title("💧 Aceites Esenciales")
-    st.write("Contenido de aceites...")
+    st.title("Extractos Puros")
+    st.write("Destilación por arrastre de vapor de alta pureza...")
