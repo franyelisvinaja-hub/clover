@@ -5,18 +5,29 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
 
-# Configuración de la página
-st.set_page_config(  page_title="Four Essences",   page_icon="🌿",   layout="wide")
+import streamlit as st
 
-# ENCABEZADO
+# 1. Configuración de la página (DEBE SER LA PRIMERA LÍNEA DE STREAMLIT)
+st.set_page_config(
+    page_title="Four Essences",
+    page_icon="🌿",
+    layout="wide"
+)
+
+# 2. ENCABEZADO (Corregido: faltaba cerrar el bloque st.markdown con """)
 st.markdown("""
     <div style="display: flex; justify-content: center; margin-bottom: 20px;">
         <img src="logo 4 essences.png" 
         style="width:100%; height:150px; object-fit: cover; border-radius: 10px;">
     </div>
+    """, unsafe_allow_html=True)
 
-# Estética
-st.markdown(""" <style>   .main {    background-color: #f5f7f1;  }
+# 3. Estética (Corregido: Alineación de las comillas triples)
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f5f7f1;
+    }
     .stTitle {
         color: #2e4a31;
         font-family: 'Helvetica', sans-serif;
@@ -41,13 +52,14 @@ if pagina == "Sobre nosotros":
     
     with col1:
         st.subheader("Nuestra Esencia")
+        # Usamos comillas triples para textos largos
         st.write("""
             En **Four Essences**, fusionamos el rigor de la ingeniería química con la pureza de la 
             naturaleza. Nos dedicamos a la investigación y desarrollo de productos que 
             resaltan el bienestar a través de procesos optimizados y materias primas de alta calidad.
         """)
         st.write("**Misión:** Transformar extractos botánicos en soluciones cosméticas de grado industrial.")
-  
+
 # --- SECCIÓN: LÍNEA CLOVER ---
 elif pagina == "Línea cosmética 'CLOVER'":
     st.title("🍀 Línea Cosmética CLOVER")
@@ -74,9 +86,11 @@ elif pagina == "Línea cosmética 'CLOVER'":
 # --- SECCIÓN: ACEITES ESENCIALES ---
 elif pagina == "Aceites esenciales":
     st.title("💧 Aceites Esenciales")
-    st.write("Nuestros aceites y hidrolatos son obtenidos mediante procesos de **destilación por arrastre de vapor**, 
-        asegurando la máxima pureza y preservación de compuestos químicos clave.")
+    # Corregido: Puse comillas triples para que el texto pueda fluir sin errores
+    st.write("""
+        Nuestros aceites e hidrolatos son obtenidos mediante procesos de **destilación por arrastre de vapor**, 
+        asegurando la máxima pureza y preservación de compuestos químicos clave.
+    """)
     
-    # Ejemplo de lista de aceites
     aceites = ["Orégano", "Clavo de olor", "Eucalipto"]
     st.selectbox("Consulta disponibilidad de aceite:", aceites)
